@@ -120,8 +120,13 @@ else lengthPassword = 8;
 //----------------------------------------------------
 //function #10 +
  const isPalyndrom = (str) => {
-  str = str.replace(/[.,?:;\/() _-]/g, '').toLowerCase();
-  return str == str.split('').reverse().join('');
+  if (str === ''){
+    return false;
+  }
+  else {
+    str = str.replace(/[.,?:;\/() _-]/g, '').toLowerCase();
+    return str == str.split('').reverse().join('');
+  }
 }
  //document.writeln(`Функция №10: ${isPalyndrom("аргентина манит негра")}`)
 
