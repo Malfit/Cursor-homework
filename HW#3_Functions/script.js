@@ -120,7 +120,7 @@ else lengthPassword = 8;
 //----------------------------------------------------
 //function #10 +
  const isPalyndrom = (str) => {
-  if (str === ''){
+  if (!str){
     return false;
   }
   else {
