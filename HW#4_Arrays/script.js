@@ -16,11 +16,11 @@ console.log(pairs);
 
 //----------------2----------------------------------------------------------
 const getPairsSubject = (stud,them) => {
-  return [
-    [([students[0],students[2]].join(' и ') + "." + themes[0] ).split(".")],
-    [([students[1],students[3]].join(' и ') + "." + themes[1] ).split(".")],
-    [([students[4],students[5]].join(' и ') + "." + themes[2] ).split(".")]
-  ];
+  const pairSubject = [];
+  for (i=0;i<pairs.length;i++){
+    pairSubject.push((pairs[i].join(' и ') + "." + themes[i] ).split("."));
+  }
+  return pairSubject;
 }
 const pairSub = getPairsSubject(students,themes);
 console.log(pairSub);
@@ -28,14 +28,11 @@ console.log(pairSub);
 
 //---------------------------3-----------------------------------------------
 const getStudentMark = (stud,mark) => {
-  return [
-    [students[0],marks[0]],
-    [students[1],marks[1]],
-    [students[2],marks[2]],
-    [students[3],marks[3]],
-    [students[4],marks[4]],
-    [students[5],marks[5]]
-  ];
+  const studMarks = [];
+  for (i=0;i<students.length;i++){
+    studMarks.push([students[i],marks[i]]);
+  }
+  return studMarks;
 }
 const studMark = getStudentMark(students,marks);
 console.log(studMark);
@@ -45,14 +42,12 @@ console.log(studMark);
 const MIN = 1;
 const MAX = 5;
 const getPairsSubjectMark = (stud,sub,mark,min,max) => {
-  return [
-  [([students[0],students[2]].join(' и ') + "." + themes[0] + "." + 
-      Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split(".")],
-  [([students[1],students[3]].join(' и ') + "." + themes[1] + "." +
-      Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split(".")],
-  [([students[4],students[5]].join(' и ') + "." + themes[2] + "." + 
-      Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split(".")]  
-  ];
+  const pairsSubMarks = [];
+  for (i=0;i<pairs.length;i++){
+    pairsSubMarks.push((pairs[i].join(' и ') + "." + themes[i] + "." 
+    + Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split("."))
+  }
+  return pairsSubMarks;
 }
 const pairSubjectMark = getPairsSubjectMark(students,themes,marks,MIN,MAX);
 console.log(pairSubjectMark);
