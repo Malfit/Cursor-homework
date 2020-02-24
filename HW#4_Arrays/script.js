@@ -18,7 +18,7 @@ console.log(pairs);
 const getPairsSubject = (stud,them) => {
   const pairSubject = [];
   for (i=0;i<pairs.length;i++){
-    pairSubject.push((pairs[i].join(' и ') + "." + themes[i] ).split("."));
+    pairSubject[i] = (pairs[i].join(' и ') + "." + themes[i] ).split(".");
   }
   return pairSubject;
 }
@@ -30,7 +30,7 @@ console.log(pairSub);
 const getStudentMark = (stud,mark) => {
   const studMarks = [];
   for (i=0;i<students.length;i++){
-    studMarks.push([students[i],marks[i]]);
+    studMarks[i] = [students[i],marks[i]];
   }
   return studMarks;
 }
@@ -44,8 +44,8 @@ const MAX = 5;
 const getPairsSubjectMark = (stud,sub,mark,min,max) => {
   const pairsSubMarks = [];
   for (i=0;i<pairs.length;i++){
-    pairsSubMarks.push((pairs[i].join(' и ') + "." + themes[i] + "." 
-    + Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split("."))
+    pairsSubMarks[i] = (pairs[i].join(' и ') + "." + themes[i] + "." 
+    + Math.floor(MIN + Math.random() * (MAX + 1 - MIN))).split(".")
   }
   return pairsSubMarks;
 }
