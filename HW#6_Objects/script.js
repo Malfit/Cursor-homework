@@ -25,96 +25,112 @@ const students = [{
   }];
   //console.log(students);
 
-// //--------------------------------------1-----------------------------------------------
-//   const getSubjects = (stud) => {
-//     let keys = Object.keys(stud.subjects)
-//     const correctWords = []
+//--------------------------------------1-----------------------------------------------
+  const getSubjects = (stud) => {
+    let keys = Object.keys(stud.subjects)
+    const correctWords = [];
 
-//     keys.forEach((key) => {
-//     let correctWord = key;
-//     correctWord = (correctWord[0].toUpperCase() + correctWord.slice(1)).replace('_',' ');
-//     correctWords.push(correctWord);
-//   })
-//   return correctWords;
-// }
+    keys.forEach((key) => {
+      let correctWord = key;
+      correctWord = (correctWord[0].toUpperCase() + correctWord.slice(1)).replace('_',' ');
+      correctWords.push(correctWord);
+    })
+    return correctWords;
+  }
 
-//   const subjects = getSubjects(students[0])
-//   console.log('1: Subjects: ', subjects);
+  const subjects = getSubjects(students[0])
+  console.log('1: Subjects: ', subjects);
 //----------------------------------------------------------------------------------------
-
-
-  
-  
-  //-------------------------------------------4----------------------------------------------
-  // const getStudentsNames = (stud) =>{
-  // const names = [];
-
-  //   for(i=0;i<stud.length;i++){
-  //     names[i] = (Object.values(stud[i].name)).join('');
-  //   }
-
-  // const alphNames = names.sort();
-  // return alphNames;
-  // }
-
-  // const sortNames = getStudentsNames(students);
-  // console.log('4: SortNames: ', sortNames);
-  //-------------------------------------------------------------------------------------------
-
-   //--------------------------------------3--------------------------------------------------
-  // 
-  // let averageMark {
-  //   averageMark: getAvgMark()
-  // }
-  // let info = Object.assign({},students, );
-  // console.log('info: ', info);
-  
-
 
 //---------------------------------------2------------------------------------------------
 const getAvgMark = (stud) => {
-    
   let values = Object.values(stud.subjects);
   const allNumbers = values.flatMap(item=>item);
   let count = 0;
-  for (i=0;i<allNumbers.length;i++){
+
+  for (let i=0;i<allNumbers.length;i++){
     count+=allNumbers[i];
   }
-  let avgMark = Number((count/allNumbers.length).toFixed(2));
+
+  let avgMark = (count/allNumbers.length).toFixed(2);
   return avgMark;
 }
 
-const avgStudMark = getAvgMark(students[0]);
-console.log('2: avgStudMark: ', avgStudMark);
+  const avgStudMark = getAvgMark(students[0]);
+  console.log('2: avgStudMark: ', avgStudMark);
 //-----------------------------------------------------------------------------------------
+  
+//--------------------------------------3--------------------------------------------------
+  const getStudentInfo = (stud) =>{
+    const { name, course } = stud;
+    return {
+    name, course, averageMark: getAvgMark(stud)
+    }
+  }
+  const studInfo = getStudentInfo(students[0]);
+  console.log('3: Student Info: ', studInfo);
+//------------------------------------------------------------------------------------------
 
+//-------------------------------------------4----------------------------------------------
+  const getStudentsNames = (stud) =>{
+  const names = [];
+
+    for(let i=0;i<stud.length;i++){
+      names[i] = (Object.values(stud[i].name)).join('');
+    }
+
+  const alphNames = names.sort();
+  return alphNames;
+  }
+
+  const sortNames = getStudentsNames(students);
+  console.log('4: Sort Names: ', sortNames);
+//-------------------------------------------------------------------------------------------
 
 //-----------------------------------------5-------------------------------------------------
   const getBestStudent = (stud) =>{
     let bestStud = 0;
-        for(i=0;i<stud.length;i++){
-        if(bestStud < getAvgMark(stud[i])){
+    let nameBestStud = Object.values(stud[0].name);
+
+    for(let i=0;i<stud.length;i++){
+      if(bestStud < getAvgMark(stud[i])){
         bestStud = getAvgMark(stud[i]);
+        nameBestStud = (Object.values(stud[i].name)).join('');
       }
     }
-    return bestStud;      
+    return nameBestStud;      
   }
   
   const bestStudent = getBestStudent(students);
-  console.log('bestStudent: ', bestStudent);
-  //-------------------------------------------------------------------------------------------
+  console.log('5: Best Student: ', bestStudent);
+//-------------------------------------------------------------------------------------------
 
+//----------------------------------------6----------------------------------------------------
+  const calculateWordLetters = (str) => {
+    let result = {};
+    let word = str.toLowerCase();
+    for (let i = 0;i<word.length;i++){
+        if(!Object.keys(result).includes(word[i])){
+          result[word[i]] = 1;
+        }
+        else result[word[i]]+=1;
+    }
+    return result;
+  }
 
+  const calculatedWordLetters = calculateWordLetters('test');
+  console.log('6: Calculated Word Letters: ', calculatedWordLetters);
+//-----------------------------------------------------------------------------------------------
+
+allCalculations = {
+      'Function №1: Correct Subjects ' : subjects,
+      'Function №2: Average Student Mark ' : avgStudMark,
+      'Function №3: Student Info ' : studInfo,
+      'Function №4: Sorted Names' : sortNames,
+      'Function №5: Best Student ' : bestStudent,
+      'Function №6: Calculated Word Letters ' : calculatedWordLetters,
+}
     
-    //let objCopy = {};
-    //let key;
-  
-    // for (key in students) {
-    //   if (objCopy[key] !== "subjects")
-    //   objCopy[key] = students[key]; 
-    // }
-
-    // let objCopy = Object.assign({}, students);
-    // console.log('objCopy: ', objCopy);
-    
-
+    for(let property in allCalculations) {
+      document.write(`${property}: ${allCalculations[property]}<br><br>`);
+    }
