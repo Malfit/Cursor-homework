@@ -1,9 +1,9 @@
 //------------------------1------------------------------------------------------  +
-const arr = [];
 const getRandomArray = (len,min,max) =>{
+    let arr = [];
     for (i=0;i<len;i++){
         let randomNum = Math.floor(min + Math.random() * (max + 1 - min));
-        arr.push(randomNum);
+        arr = [...arr,randomNum];
     }
     return arr;
 }
@@ -11,20 +11,9 @@ const randomArray = getRandomArray(15,1,100);
 console.log(randomArray);
 //------------------------------------------------------------------------------
 
-//-----------------------------2------------------------------------------------- -
-// const getModa = (...numbers) =>{
-//     numbers.sort((a,b) =>  a - b);
-    
-//     console.log(numbers);
-//     return true;
-// }
-// //const moda = [];
-// getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)
-//--------------------------------------------------------------------------------
-
 //-------------------------------3------------------------------------------------  +
-let total = 0;
 const getAverage = (...numbers) =>{
+    let total = 0;
     for (i = 0;i<numbers.length;i++){
         total += numbers[i];
     }
@@ -35,8 +24,8 @@ console.log(average);
 //----------------------------------------------------------------------------------
 
 //------------------------------------4--------------------------------------------- +
-let mediana = 0;
 const getMedian = (...numbers) =>{
+    let mediana = 0;
     numbers.sort((a,b) =>  a - b);
     if (numbers.length % 2 == 1 ){
         mediana = numbers[Math.floor(numbers.length/2)];       
