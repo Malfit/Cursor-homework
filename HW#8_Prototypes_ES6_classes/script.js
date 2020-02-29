@@ -25,7 +25,7 @@ class Student {
             return null;
         }
         else {
-            return this.marks.push(value);
+            return this.marks = [...this.marks, value];
         }
     }
 
