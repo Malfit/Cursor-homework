@@ -1,0 +1,19 @@
+*{
+    display: flex;
+    /*display: block;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bigBox{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+    height: 250px;
+    width: 250px;
+    border:  outset 10px black;
+    border-radius: 20px;
+}
+
