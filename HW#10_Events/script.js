@@ -8,7 +8,6 @@ let keyU = document.getElementById('85');
 let keyI = document.getElementById('73');
 let keyO = document.getElementById('79');
 
-//i can't create here objects for audio, because speed of playing is less
 
 const playSoundQ =()=> {let myAudioQ = new Audio('sounds/q.mp3');  myAudioQ.play();}
 const playSoundW =()=> {let myAudioQ = new Audio('sounds/w.mp3');  myAudioQ.play();}
