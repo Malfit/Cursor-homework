@@ -18,7 +18,6 @@ const playSoundU =()=> {let myAudioU = new Audio('sounds/u.mp3');  myAudioU.play
 const playSoundI =()=> {let myAudioI = new Audio('sounds/i.mp3');  myAudioI.play();}
 const playSoundO =()=> {let myAudioO = new Audio('sounds/o.mp3');  myAudioO.play();}
 
-
 //-----------------------------actions for keydown---------------------------------------------------------
 document.addEventListener('keydown',function(event){
     switch (event.keyCode) {
