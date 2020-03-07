@@ -10,14 +10,14 @@ let keyO = document.getElementById('79');
 
 
 const playSoundQ =()=> {let myAudioQ = new Audio('sounds/q.mp3');  myAudioQ.play();}
-const playSoundW =()=> {let myAudioQ = new Audio('sounds/w.mp3');  myAudioQ.play();}
-const playSoundE =()=> {let myAudioQ = new Audio('sounds/e.mp3');  myAudioQ.play();}
-const playSoundR =()=> {let myAudioQ = new Audio('sounds/r.mp3');  myAudioQ.play();}
-const playSoundT =()=> {let myAudioQ = new Audio('sounds/t.mp3');  myAudioQ.play();}
-const playSoundY =()=> {let myAudioQ = new Audio('sounds/y.mp3');  myAudioQ.play();}
-const playSoundU =()=> {let myAudioQ = new Audio('sounds/u.mp3');  myAudioQ.play();}
-const playSoundI =()=> {let myAudioQ = new Audio('sounds/i.mp3');  myAudioQ.play();}
-const playSoundO =()=> {let myAudioQ = new Audio('sounds/o.mp3');  myAudioQ.play();}
+const playSoundW =()=> {let myAudioW = new Audio('sounds/w.mp3');  myAudioW.play();}
+const playSoundE =()=> {let myAudioE = new Audio('sounds/e.mp3');  myAudioE.play();}
+const playSoundR =()=> {let myAudioR = new Audio('sounds/r.mp3');  myAudioR.play();}
+const playSoundT =()=> {let myAudioT = new Audio('sounds/t.mp3');  myAudioT.play();}
+const playSoundY =()=> {let myAudioY = new Audio('sounds/y.mp3');  myAudioY.play();}
+const playSoundU =()=> {let myAudioU = new Audio('sounds/u.mp3');  myAudioU.play();}
+const playSoundI =()=> {let myAudioI = new Audio('sounds/i.mp3');  myAudioI.play();}
+const playSoundO =()=> {let myAudioO = new Audio('sounds/o.mp3');  myAudioO.play();}
 
 //-----------------------------actions for keydown---------------------------------------------------------
 document.addEventListener('keydown',function(event){
