@@ -15,5 +15,13 @@
     width: 250px;
     border:  outset 10px black;
     border-radius: 20px;
-}
+
+    /* text-decoration: none; 
+    border-bottom: 3px solid #E51C81;
+    border-top: 3px solid #14C981;
+     padding: 2px 2px; 
+    /* display: inline-block; */
+    /* box-shadow: -2px -2px white, -5px -5px #E51C81, 2px 2px white, 5px 5px #14C981;
+     color: white; */
+} 
 
