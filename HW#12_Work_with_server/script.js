@@ -31,10 +31,10 @@ const renderCharacters = (characters) =>{
         console.log(character);    
         let characterDiv = document.createElement('div');
         characterDiv.innerHTML = `
-            <div> <p>name: ${character[0]}</p> <p> gender: ${character[1]}</p> 
-            <p> birth year: ${character[2]}</p> </div>`
+            <div class="renderElement"> <p class="character-description-aaa">name: ${character[0]}</p> <p class="character-description-aaa"> gender: ${character[1]}</p> 
+            <p class="character-description-aaa"> birth year: ${character[2]}</p> </div>`
 
-        characterDiv.classList.add('renderElement');
+        characterDiv.style.backgroundImage =  "photo-1475139441338-693e7dbe20b6.jpg"
         container1.append(characterDiv);  
     })
 }
@@ -82,7 +82,6 @@ const renderAllPlanets = (planets) =>{
         
         planetDiv.style.height = "20px";
         planetDiv.style.width = "140px";
-        //planetDiv.style.background = "blue";
         planetDiv.classList.add('renderElement');
         container2.append(planetDiv);
     })
