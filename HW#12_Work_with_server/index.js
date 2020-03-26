@@ -1,4 +1,6 @@
-
+let container1 = document.querySelector(".Task1_charactersInfo");
+let container2 = document.querySelector(".Task2_allPlanets");
+let container3 = document.querySelector(".Task3_10Planets");
 //-------------------------------------1----------------------------------------------
 const getAllPeople = async () =>{
     try{   
@@ -8,10 +10,9 @@ const getAllPeople = async () =>{
         for (let i = 0;i < response.data.characters.length;i ++){
           let resp = await axios.get(response.data.characters[i])
             let characterName = resp.data.name;
-            let chracterGender = resp.data.gender;
             let characterBirthYear = resp.data.birth_year;
-            
-            result = [...result,[characterName, chracterGender, characterBirthYear]]
+            let chracterGender = resp.data.gender;
+            result = [...result,[characterName, characterBirthYear, chracterGender]]
         }
 
         return result;
@@ -22,19 +23,16 @@ const getAllPeople = async () =>{
     }
 }
 
-let container1 = document.querySelector(".Task1_charactersInfo")
 
 const renderCharacters = (characters) =>{  
     console.log(characters);
-    container1.innerHTML = "";
+    //container1.innerHTML = "";
     characters.forEach(character => {
         console.log(character);    
         let characterDiv = document.createElement('div');
-        characterDiv.innerHTML = `
-            <div> <p>name: ${character[0]}</p> <p> gender: ${character[1]}</p> 
-            <p> birth year: ${character[2]}</p> </div>`
-
-        characterDiv.classList.add('renderElement');
+        characterDiv.innerHTML = `${character}`;
+        //  characterDiv.style.height = "100px";
+        //  characterDiv.style.width = "100px"
         container1.append(characterDiv);  
     })
 }
@@ -49,7 +47,7 @@ btnViewPeople.addEventListener('click',function(){
 })
 //---------------------------------------------------------------------------------------
 
-// //-----------------------------------------2---------------------------------------------
+//-----------------------------------------2---------------------------------------------
 
 const getPlanets = async () =>{
     try{
@@ -72,7 +70,6 @@ const getPlanets = async () =>{
     }
 }
 
-let container2 = document.querySelector(".Task2_allPlanets");
 
 const renderAllPlanets = (planets) =>{  
     container2.innerHTML = "";
@@ -83,7 +80,6 @@ const renderAllPlanets = (planets) =>{
         planetDiv.style.height = "20px";
         planetDiv.style.width = "140px";
         //planetDiv.style.background = "blue";
-        planetDiv.classList.add('renderElement');
         container2.append(planetDiv);
     })
 }
@@ -96,9 +92,9 @@ btnPlanets.append(btnView);
 btnView.addEventListener('click',function(){
     getPlanets().then(renderAllPlanets);
 })
-// //-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
 
-// //------------------------------------------3------------------------------------------
+//------------------------------------------3------------------------------------------
 let currentPage = "https://swapi.co/api/planets/";
 
 const get10Planets = async ()=>{
@@ -113,21 +109,18 @@ const get10Planets = async ()=>{
     }
 }
 
-let container3 = document.querySelector(".tenPlanets-info");
+
 
 const renderPlanets = (planets) =>{  
-    container3.innerHTML = ""; 
+    //container3.innerHTML = ""; 
     planets.forEach(planet => {
-        const planetDiv2 = document.createElement('div');
-        planetDiv2.innerHTML = `${planet.name}  `;
-        planetDiv2.style.height = "20px";
-        planetDiv2.style.width = "140px";
-        planetDiv2.classList.add('renderElement');
-        container3.append(planetDiv2);
+        const planetDiv = document.createElement('div');
+        planetDiv.innerHTML = `${planet.name}  `;
+        container3.append(planetDiv);
     })
 }
 
-let btnPlanetInfo = document.querySelector(".Task3_10Planets");
+let btnPlanetInfo = document.querySelector(".tenPlanets-info");
 let btnNext = document.createElement("button");
 btnNext.textContent = "View next planets";
 btnPlanetInfo.append(btnNext);
