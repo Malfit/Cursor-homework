@@ -29,6 +29,7 @@ body{
     background-color : darkviolet;
     margin: 10px;  
     padding: 9px;
+    transition: 0.2s;
    
 }
 .box:hover{
