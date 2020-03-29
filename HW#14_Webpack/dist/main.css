@@ -3,7 +3,9 @@ body{
     justify-content: center; 
     align-items: center; 
     height: 100vh;
-    background-image: url(177abe220402fe01b4ea5ffc5181adeb.jpg) no-repeat;
+    background-image: url(177abe220402fe01b4ea5ffc5181adeb.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container{
